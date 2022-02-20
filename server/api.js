@@ -53,13 +53,13 @@ router.get("/newQuestion", (req,res) => {
 });
 
 router.post("/submitQuestion", (req,res) => {
-  let question = new question({
+  let newQuestion = new question({
     content: req.content,
     answer: req.answer,
     difficulty: req.difficulty,
     scoreAdded: req.scoreAdded,
   })
-  question.save()
+  newQuestion.save()
 })
 
 
