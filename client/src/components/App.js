@@ -43,6 +43,7 @@ const App = () => {
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <NotFound default />
+        console.log("Hello");
       </Router>
     </>
   );
