@@ -46,7 +46,7 @@ const App = () => {
     <h1>Hi</h1>
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <NotFound default /> */}
+        <NotFound default />
       </Router>
     <Post userId='JohnT' content = '$$(3\times 4) \div (5-3)$$'/>
     <Question/>
