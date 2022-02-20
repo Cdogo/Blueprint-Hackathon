@@ -2,14 +2,23 @@ import React, { useState, useEffect } from "react";
 
 import "../../utilities.css";
 import "./Post.css";
+
 const Latex = require('react-latex');
 
 const Post = ({ userId, content}) => {
-    const [numLikes, setLikes] = useState('0')
+    const [numUpvotes, setUpvotes] = useState('0')
     return (
-        <div>
+        <div id = 'postDiv'>
             <p>{userId}</p>
-            <Latex displayMode={true}>{content}</Latex>
+            <Latex>{content}</Latex>
+            <div id = 'upvoteSystem'>
+                <div id = 'numUpvoteDiv'>
+                    <p id = 'numUpvotes'>{numUpvotes}</p>
+                </div>
+                <div id = 'upvoteDiv'>
+                    <button id = 'upvote'>Upvote</button>
+                </div>
+            </div>
         </div>
     );
   };

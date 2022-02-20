@@ -1,1 +1,29 @@
 /*Post Style Sheet*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
+}
+#postDiv{
+    background-color:#D4D5D2;
+    border-radius:15px;
+    margin:10px;
+    padding:20px;
+}
+#upvoteSystem{ 
+    width:20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+#numUpvotes{
+    text-align:right;
+}
+#upvote{
+    background-color:#777877;
+    border:none;
+    border-radius:10px;
+    padding:10px;
+    vertical-align: middle;
+    display: inline-block;
+}
