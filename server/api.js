@@ -1,3 +1,4 @@
+// import axios from "axios";
 /*
 |--------------------------------------------------------------------------
 | api.js -- server routes
@@ -6,7 +7,6 @@
 | This file defines the routes for your server.
 |
 */
-
 const express = require("express");
 
 // import models so we can interact with the database
@@ -20,6 +20,9 @@ const router = express.Router();
 
 //initialize socket
 const socketManager = require("./server-socket");
+
+
+const https = require('https');
 
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
@@ -117,51 +120,83 @@ class answer extends React.Component {
 }
 */
 
-// function MyComponent() {
-//   const [error, setError] = useState(null);
-//   const [isLoaded, setIsLoaded] = useState(false);
-//   const [items, setItems] = useState([]);
+function MyComponent() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
 
-//   // Note: the empty deps array [] means
-//   // this useEffect will run once
-//   // similar to componentDidMount()
-//   useEffect(() => {
-//     fetch("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
-//       .then(res => res.json())
-//       .then(
-//         (result) => {
-//           setIsLoaded(true);
-//           setItems(result);
-//           console.log(result)
-//         },
-//         // Note: it's important to handle errors here
-//         // instead of a catch() block so that we don't swallow
-//         // exceptions from actual bugs in components.
-//         (error) => {
-//           setIsLoaded(true);
-//           setError(error);
-//         }
-//       )
-//   }, [])
+  // Note: the empty deps array [] means
+  // this useEffect will run once
+  // similar to componentDidMount()
+  useEffect(() => {
+    fetch("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+          console.log(result)
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, [])
 
-//   if (error) {
-//     return (<div>Error: {error.message}</div>);
-//   } else if (!isLoaded) {
-//     return <div>Loading...</div>;
-//   } else {
-//     return (
-//       <ul>
-//         {items.map(item => (
-//           <li key={item.id}>
-//             {item.name} {item.price}
-//           </li>
-//         ))}
-//       </ul>
-//     );
-//   }
-// }
+  if (error) {
+    return (<div>Error: {error.message}</div>);
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>
+            {item.name} {item.price}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+}
 
-// MyComponent()
+MyComponent()
+
+// router.get("/answer", (req,res) => {
+//   fetch("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
+//   .then(res => res.json())
+//   .then(data => this.setState({}))
+// })
+
+// https.get("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json", res => {
+//   let data = []
+//   const answer = res.pods.subpods
+//   console.log("answer: ", answer);
+//   res.on('data',chunk => {
+//     data.push(chunk)
+//   })
+// })
+
+
+
+// axios.get('https://jsonplaceholder.typicode.com/users')
+//   .then(res => {
+//     const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
+//     console.log('Status Code:', res.status);
+//     console.log('Date in Response header:', headerDate);
+
+//     const users = res.data;
+
+//     console.log(users)
+//   })
+//   .catch(err => {
+//     console.log("123");
+//     console.log('Error: ', err.message);
+//   });
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
