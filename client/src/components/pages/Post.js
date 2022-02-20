@@ -1,19 +1,17 @@
-import React, { Component, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import "../../utilities.css";
 import "./Post.css";
-var Latex = require('react-latex');
+const Latex = require('react-latex');
 
-const Post = ({ userId, content, handleLogout }) => {
+const Post = ({ userId, content}) => {
     const [numLikes, setLikes] = useState('0')
-    useEffect(() =>{
-        get('')
-    })
     return (
-      <>
-        <p className = 'content'>
+        <div>
+            <p>{userId}</p>
             <Latex displayMode={true}>{content}</Latex>
-        </p>
-      </>
+        </div>
     );
   };
+
+  export default Post;
