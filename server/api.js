@@ -43,6 +43,12 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 
+router.get("/newQuestion", (req,res) => {
+  question.find({}).then((question) => {
+    res.send(messages);
+  });
+});
+
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {

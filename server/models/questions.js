@@ -6,9 +6,9 @@ const questionSchema = new mongoose.Schema({
   name: String,
   googleid: String,
   content: String,
-  answer: double,
-  difficulty: int,
-  scoreAdded: int  
+  answer: Number,
+  difficulty: Number,
+  scoreAdded: Number,  
 });
 
 // compile model from schema
