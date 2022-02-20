@@ -3,6 +3,7 @@ import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Post from "./pages/Post.js"
+import Question from "./pages/questionanswer.js";
 
 import "../utilities.css";
 
@@ -43,10 +44,11 @@ const App = () => {
     <>
     <h1>Hi</h1>
       <Router>
-        <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <NotFound default />
+        {/* <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+        <NotFound default /> */}
       </Router>
     <Post userId='JohnT' content = '$$(3\times 4) \div (5-3)$$'/>
+    <Question/>
     </>
   );
 };
