@@ -10,6 +10,7 @@ const GOOGLE_CLIENT_ID = "729182095902-dka0ua62eal68jks7in19dp0j81trfl9.apps.goo
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <>
+    <h1>Welcome to MathIt!</h1>
       {userId ? (
         <GoogleLogout
           clientId={GOOGLE_CLIENT_ID}
