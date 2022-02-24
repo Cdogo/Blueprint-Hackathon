@@ -129,7 +129,7 @@ function MyComponent() {
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    fetch("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
+    fetch("http://api.wolframalpha.com/v2/query?appid=XXXW&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
       .then(res => res.json())
       .then(
         (result) => {
@@ -167,12 +167,12 @@ function MyComponent() {
 MyComponent()
 
 // router.get("/answer", (req,res) => {
-//   fetch("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
+//   fetch("http://api.wolframalpha.com/v2/query?appid=XXXW&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json")
 //   .then(res => res.json())
 //   .then(data => this.setState({}))
 // })
 
-// https.get("http://api.wolframalpha.com/v2/query?appid=YGV9XJ-RH825P558W&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json", res => {
+// https.get("http://api.wolframalpha.com/v2/query?appid=XXXW&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext&includepodid=Result&output=json", res => {
 //   let data = []
 //   const answer = res.pods.subpods
 //   console.log("answer: ", answer);
